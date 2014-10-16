@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="Categories_objet">
+        <item>Appliances</item>
+		<item>Baby</item>
+		<item>Beauty</item>
+		<item>Books</item>
+		<item>ClothingAccessories</item>
+		<item>Clothing</item>
+		<item>Computers</item>
+		<item>FoodAndBeverages</item>
+		<item>Health</item>
+		<item>Home</item>
+		<item>Industrial</item>
+		<item>Jewelry</item>
+		<item>Music</item>
+		<item>MusicalInstruments</item>
+		<item>Office</item>
+		<item>OtherProducts</item>
+		<item>Photography</item>
+		<item>Shoes</item>
+		<item>Sports</item>
+		<item>Tools</item>
+		<item>Toys</item>
+		<item>Vehicles</item>
+		<item>Video</item>
+		<item>VideoGames</item>
+		<item>OtherServices</item>
+		<item>PersonalCaring</item>
+		<item>Teaching</item>
+		<item>Transport</item>
+    </array>
+    
+</resources>

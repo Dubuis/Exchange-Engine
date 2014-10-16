@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Exchange Engine</string>
+    <string name="Bouton_Connexion">Se Connecter</string>
+    <string name="Bouton_Inscription">S'inscrire</string>
+    <string name="Bouton_Photo">Prendre une photo</string>
+    <string name="nouvel_objet_titre">Titre :</string>
+    <string name="nouvel_objet_categorie">Catégories :</string>
+    <string name="nouvel_objet_description">Description :</string>
+    <string name="accueil_bouton_mes_objets">Mes Objets</string>
+    <string name="accueil_bouton_ajouter_objet">Ajouter Objet</string>
+    <string name="accueil_bouton_recherche">Recherche</string>
+    <string name="main_identifiant">Identifiant :</string>
+    <string name="main_motdepasse">Mot de passe :</string>
+
+</resources>
