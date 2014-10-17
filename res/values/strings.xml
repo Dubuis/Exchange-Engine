@@ -3,7 +3,7 @@
 
     <string name="app_name">Exchange Engine</string>
     <string name="Bouton_Connexion">Se Connecter</string>
-    <string name="Bouton_Inscription">S'inscrire</string>
+    <string name="Bouton_Inscription">S\'inscrire</string>
     <string name="Bouton_Photo">Prendre une photo</string>
     <string name="nouvel_objet_titre">Titre :</string>
     <string name="nouvel_objet_categorie">Catégories :</string>
