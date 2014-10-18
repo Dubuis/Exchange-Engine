@@ -25,7 +25,7 @@
 		    </intent-filter>
 		 </activity>
 		<activity android:name="AccueilActivity"></activity>
-		<activity android:name="Parcourir"></activity>
+		<activity android:name="ParcourirActivity"></activity>
 	</application>
 
 </manifest>

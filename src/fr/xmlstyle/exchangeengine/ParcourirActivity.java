@@ -17,13 +17,14 @@ import android.view.Menu;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ParcourirActivity extends Activity{
 	@Override
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
-		parseXML();
 		setContentView(R.layout.parcourir);
+		parseXML();
 	}
 	
 	@Override
@@ -47,36 +48,44 @@ public class ParcourirActivity extends Activity{
 			
 			String proprietaire = myXMLHandler.getproprietaire();
 			ArrayList<ObjectInfo> objectList = myXMLHandler.getObjectList();
-			
+		
+			LinearLayout layoutContent = (LinearLayout)findViewById(R.id.parcourir_layout);
 			TextView tv;
-			//ImageView img;
+			ImageView img;
 			for(ObjectInfo objectinfo: objectList){
 				// A FAIRE : RENDRE CA PLUS DYNAMIQUE EN CACHANT DES INFOS ET EN LES FAISANT APPARAITRE
 				//			 EN CLIQUANT SUR L'IMAGE (PAR EXEMPLE)
-				LinearLayout layoutContent = (LinearLayout) findViewById(R.layout.parcourir);
-				layoutContent.removeAllViewsInLayout();
 				tv = new TextView(this);
 				tv.setText("Titre : "+objectinfo.gettitre());
+				layoutContent.addView(tv);
 				tv = new TextView(this);
 				tv.setText("proposé par : "+proprietaire);
+				layoutContent.addView(tv);
 				tv = new TextView(this);
 				tv.setText("\tCategorie : "+objectinfo.getcategorie());
+				layoutContent.addView(tv);
 				tv = new TextView(this);
 				tv.setText("\tInformations : "+objectinfo.getechange());
+				layoutContent.addView(tv);
 				tv = new TextView(this);
 				tv.setText("\tCouleur : "+objectinfo.getcouleur());
+				layoutContent.addView(tv);
 				tv = new TextView(this);
 				tv.setText("\tLieu : "+objectinfo.getzone());
+				layoutContent.addView(tv);
 				//img = new ImageView(this);
 				//img.setImageURI(Uri.parse(objectinfo.geturl()));
+				//layoutContent.addView(img);
 				tv = new TextView(this);
 				tv.setText("Contact :");
+				layoutContent.addView(tv);
 				tv = new TextView(this);
 				tv.setText("\tMail : "+objectinfo.getmel());
+				layoutContent.addView(tv);
 				tv = new TextView(this);
 				tv.setText("\tTel : "+objectinfo.getnumero());
+				layoutContent.addView(tv);
 			}
-			
 		}
 		catch (Exception e) {
             e.printStackTrace();

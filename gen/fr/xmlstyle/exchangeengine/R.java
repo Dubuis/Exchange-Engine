@@ -1092,7 +1092,6 @@ containing a value of this type.
         public static final int beginning=0x7f050011;
         public static final int boutonmesobjets=0x7f05003d;
         public static final int boutonrecherche=0x7f05003e;
-        public static final int button1=0x7f05004b;
         public static final int buttonconnexion=0x7f050040;
         public static final int buttoninscription=0x7f050045;
         public static final int checkbox=0x7f05002d;
@@ -1122,6 +1121,7 @@ containing a value of this type.
         public static final int never=0x7f050009;
         public static final int none=0x7f050010;
         public static final int normal=0x7f050000;
+        public static final int parcourir_layout=0x7f05004b;
         public static final int phraseAccueil=0x7f05003c;
         public static final int progress_circular=0x7f050018;
         public static final int progress_horizontal=0x7f050019;

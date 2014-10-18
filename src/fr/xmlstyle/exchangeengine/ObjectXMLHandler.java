@@ -27,10 +27,10 @@ public class ObjectXMLHandler extends DefaultHandler{
 		
 		if(localName.equals("diagramme")){
         }
-        else if(localName.equals("object")){
+        else if(localName.equals("objet")){
         }
         else if(localName.equals("proprietaire")){
-       	 objectList = new ArrayList<ObjectInfo>();
+         	 objectList = new ArrayList<ObjectInfo>();
         }
         else if(localName.equals("information")){
        	 objectInfo = new ObjectInfo();

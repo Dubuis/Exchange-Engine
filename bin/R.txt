@@ -252,7 +252,6 @@ int id always 0x7f05000b
 int id beginning 0x7f050011
 int id boutonmesobjets 0x7f05003d
 int id boutonrecherche 0x7f05003e
-int id button1 0x7f05004b
 int id buttonconnexion 0x7f050040
 int id buttoninscription 0x7f050045
 int id checkbox 0x7f05002d
@@ -282,6 +281,7 @@ int id motdepasse 0x7f050041
 int id never 0x7f050009
 int id none 0x7f050010
 int id normal 0x7f050000
+int id parcourir_layout 0x7f05004b
 int id phraseAccueil 0x7f05003c
 int id progress_circular 0x7f050018
 int id progress_horizontal 0x7f050019
