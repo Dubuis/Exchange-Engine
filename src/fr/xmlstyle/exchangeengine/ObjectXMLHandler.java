@@ -10,13 +10,9 @@ public class ObjectXMLHandler extends DefaultHandler{
 	boolean currentElement = false;
 	String currentValue = "";
 	
-	String proprietaire ="";
 	ObjectInfo objectInfo;
 	ArrayList<ObjectInfo> objectList;
 	
-	public String getproprietaire(){
-		return proprietaire;
-	}
 	public ArrayList<ObjectInfo> getObjectList(){
 		return objectList;
 	}
@@ -26,14 +22,14 @@ public class ObjectXMLHandler extends DefaultHandler{
 		currentElement = true;
 		
 		if(localName.equals("diagramme")){
+         	 objectList = new ArrayList<ObjectInfo>();
         }
         else if(localName.equals("objet")){
         }
         else if(localName.equals("proprietaire")){
-         	 objectList = new ArrayList<ObjectInfo>();
+       	 	objectInfo = new ObjectInfo();
         }
         else if(localName.equals("information")){
-       	 objectInfo = new ObjectInfo();
         }
 	}
 	
@@ -41,8 +37,8 @@ public class ObjectXMLHandler extends DefaultHandler{
 	public void endElement(String uri, String localName, String qName) throws SAXException{
 		currentElement = false;
 		
-		if(qName.equalsIgnoreCase("proprietaire"))
-			proprietaire = currentValue.trim();
+		if(qName.equals("proprietaire"))
+			objectInfo.setproprietaire(currentValue.trim());
 		else if(qName.equals("mel"))
 			objectInfo.setmel(currentValue.trim());
 		else if(qName.equals("titre"))
@@ -61,7 +57,6 @@ public class ObjectXMLHandler extends DefaultHandler{
 			objectInfo.seturl(currentValue.trim());
 		else if(qName.equals("information"))
 			objectList.add(objectInfo);
-		
 		currentValue = "";
 	}
 	

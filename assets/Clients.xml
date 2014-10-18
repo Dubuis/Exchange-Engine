@@ -1,1 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<diagramme>
+	<utilisateur>
+		<mel>toto@toto.fr</mel>
+		<information>
+			<prenom>toto@toto.fr</prenom>
+			<nom>toto</nom>
+			<mdp>toto</mdp>
+		</information>
+	</utilisateur>
+	<utilisateur>
+		<mel>eldoran.s.e@gmail.com</mel>
+		<information>
+			<prenom>Michaël</prenom>
+			<nom>Dubuis</nom>
+			<mdp>0000</mdp>
+		</information>
+	</utilisateur>
+	<utilisateur>
+		<mel>pute@gmail.com</mel>
+		<information>
+			<prenom>pute</prenom>
+			<nom>pute</nom>
+			<mdp>pute</mdp>
+		</information>
+	</utilisateur>
+</diagramme>

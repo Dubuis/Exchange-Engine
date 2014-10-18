@@ -13,7 +13,7 @@
         android:text="@string/nouvel_objet_titre" />
 
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/nomUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -28,7 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/editText1"
+        android:layout_below="@+id/nomUser"
         android:text="@string/nouvel_objet_categorie" />
 
     <Spinner
@@ -36,7 +36,7 @@
         style="@array/Categories_objet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editText1"
+        android:layout_below="@+id/nomUser"
         android:layout_toRightOf="@+id/textView2" />
 
     <TextView
@@ -48,7 +48,7 @@
         android:text="@string/nouvel_objet_description" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/prenomUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/spinner1"
@@ -61,7 +61,7 @@
         android:id="@+id/imageButton1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editText2"
+        android:layout_below="@+id/prenomUser"
         android:contentDescription="@string/Bouton_Photo"
         android:src="@drawable/app_photo" />
     

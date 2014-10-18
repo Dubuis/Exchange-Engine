@@ -17,6 +17,16 @@ public class ObjectInfo {
 	 *			<numero>numero</numero>
 	 *			<url>voiture1.png</url>
 	 *		</information>
+	 *		<information>
+	 *			<mel>mel</mel>
+	 *			<titre>titre</titre>
+	 * 			<categorie>vehicule</categorie>
+	 *			<couleur>couleur</couleur>
+	 *			<echange>echange</echange>
+	 *			<zone>zone</zone>
+	 *			<numero>numero</numero>
+	 *			<url>voiture1.png</url>
+	 *		</information>
 	 *	</objet>
 	 *
 	 * 	<objet>
@@ -25,6 +35,7 @@ public class ObjectInfo {
 	 *</diagramme>
 	 * 
 	 */
+	private String proprietaire = "";
 	private String mel = "";
 	private String titre = "";
 	private String categorie = "";
@@ -35,6 +46,9 @@ public class ObjectInfo {
 	private String url = "";
 
 	/************* Definition Setter Methods *********/
+	public void setproprietaire(String proprietaire){
+		this.proprietaire = proprietaire;
+	}
 	public void setmel(String mel) {
 		this.mel = mel;
 	}
@@ -68,6 +82,9 @@ public class ObjectInfo {
 	}
 
 	/************* Definition Getter Methods *********/
+	public String getproprietaire(){
+		return this.proprietaire;
+	}
 	public String getmel() {
 		return this.mel;
 	}
@@ -105,10 +122,11 @@ public class ObjectInfo {
 	@Override
 	public String toString() {
 		// A modifier ultérieurement
-		return "XmlModel [mel=" + mel + ", titre="
-				+ titre + ", categorie=" + categorie + ", couleur=" + couleur
-				+ ", echange=" + echange + ", zone=" + zone + ", numero="
-				+ numero + ", url=" + url + "]";
+		return "XmlModel ["+ "\ntitre="
+				+ titre +"\nmel=" + mel + "\ntitre="
+				+ titre + "\ncategorie=" + categorie + "\ncouleur=" + couleur
+				+ "\nechange=" + echange + "\nzone=" + zone + "\nnumero="
+				+ numero + "\nurl=" + url + "\n]";
 	}
 
 }
