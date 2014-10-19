@@ -54,7 +54,7 @@ public class ParcourirActivity extends Activity{
 			LinearLayout layoutParent = (LinearLayout)findViewById(R.id.parcourir_layout);
 			LinearLayout layoutContent;
 			TextView tv;
-			ImageView img;
+			//ImageView img;
 			for(ObjectInfo objectinfo: objectList){
 				// A FAIRE : RENDRE CA PLUS DYNAMIQUE EN CACHANT DES INFOS ET EN LES FAISANT APPARAITRE
 				//			 EN CLIQUANT SUR L'IMAGE (PAR EXEMPLE)
@@ -84,9 +84,9 @@ public class ParcourirActivity extends Activity{
 				tv = new TextView(this);
 				tv.setText("\tLieu : "+objectinfo.getzone());
 				layoutContent.addView(tv);
-				img = new ImageView(this);
-				img.setImageURI(Uri.parse(objectinfo.geturl()));
-				layoutContent.addView(img);
+				//img = new ImageView(this);
+				//img.setImageURI(Uri.parse(objectinfo.geturl()));
+				//layoutContent.addView(img);
 				tv = new TextView(this);
 				tv.setText("Contact :");
 				layoutContent.addView(tv);

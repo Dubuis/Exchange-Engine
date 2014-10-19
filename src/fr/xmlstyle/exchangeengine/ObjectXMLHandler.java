@@ -10,6 +10,7 @@ public class ObjectXMLHandler extends DefaultHandler{
 	boolean currentElement = false;
 	String currentValue = "";
 	
+	String proprio;
 	ObjectInfo objectInfo;
 	ArrayList<ObjectInfo> objectList;
 	
@@ -27,9 +28,9 @@ public class ObjectXMLHandler extends DefaultHandler{
         else if(localName.equals("objet")){
         }
         else if(localName.equals("proprietaire")){
-       	 	objectInfo = new ObjectInfo();
         }
         else if(localName.equals("information")){
+       	 	objectInfo = new ObjectInfo();
         }
 	}
 	
@@ -38,7 +39,7 @@ public class ObjectXMLHandler extends DefaultHandler{
 		currentElement = false;
 		
 		if(qName.equals("proprietaire"))
-			objectInfo.setproprietaire(currentValue.trim());
+			proprio = currentValue.trim();
 		else if(qName.equals("mel"))
 			objectInfo.setmel(currentValue.trim());
 		else if(qName.equals("titre"))
@@ -55,8 +56,10 @@ public class ObjectXMLHandler extends DefaultHandler{
 			objectInfo.setnumero(currentValue.trim());
 		else if(qName.equals("url"))
 			objectInfo.seturl(currentValue.trim());
-		else if(qName.equals("information"))
+		else if(qName.equals("information")){
+			objectInfo.setproprietaire(proprio);
 			objectList.add(objectInfo);
+		}
 		currentValue = "";
 	}
 	

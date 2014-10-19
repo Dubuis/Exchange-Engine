@@ -11,8 +11,11 @@ import android.widget.TextView;
 
 public class AccueilActivity extends Activity {
 
-	final String EXTRA_LOGIN = "user_login";
+	final String EXTRA_MAIL = "user_mail";
 	final String EXTRA_PASSWORD = "user_password";
+	final String EXTRA_NOM = "user_name";
+	final String EXTRA_PRENOM = "user_prenom";
+	final PersonInfo currentUser = new PersonInfo();
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -29,11 +32,18 @@ public class AccueilActivity extends Activity {
 				startActivity(intent);
 			}
 	    });
-        
+        // Récupération de l'utilisateur courant
         Intent intent = getIntent();
+        if(intent != null){
+	        currentUser.setnom(intent.getStringExtra(EXTRA_NOM));
+	    	currentUser.setprenom(intent.getStringExtra(EXTRA_PRENOM));
+	    	currentUser.setmdp(intent.getStringExtra(EXTRA_PASSWORD));
+	    	currentUser.setmel(intent.getStringExtra(EXTRA_MAIL));
+        }
+    	// Affichage de la phrase de bonjour personnalisée 
         TextView phraseAccueil = (TextView) findViewById(R.id.phraseAccueil);
-        if (intent != null){
-        	phraseAccueil.setText("Bonjour "+intent.getStringExtra(EXTRA_LOGIN));
+        if (currentUser != null){
+        	phraseAccueil.setText("Bonjour "+currentUser.getnom()+" "+currentUser.getprenom());
         }
     }
 }

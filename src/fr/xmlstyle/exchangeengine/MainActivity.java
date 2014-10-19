@@ -20,8 +20,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
-	final String EXTRA_LOGIN = "user_login";
+	final String EXTRA_MAIL = "user_mail";
 	final String EXTRA_PASSWORD = "user_password";
+	final String EXTRA_NOM = "user_name";
+	final String EXTRA_PRENOM = "user_prenom";
 	private ArrayList<PersonInfo> userList = null;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +46,10 @@ public class MainActivity extends Activity {
 						exist = true;
 						if(userList.get(i).getmdp().toString().equals(pass.getText().toString())){
 							Intent intent = new Intent(MainActivity.this, AccueilActivity.class);
-							intent.putExtra(EXTRA_LOGIN, (userList.get(i).getnom()+" "+userList.get(i).getprenom()).toString());
+							intent.putExtra(EXTRA_MAIL, userList.get(i).getmel());
+							intent.putExtra(EXTRA_NOM, userList.get(i).getnom());
+							intent.putExtra(EXTRA_PRENOM, userList.get(i).getprenom());
+							intent.putExtra(EXTRA_PASSWORD, userList.get(i).getmdp());
 							startActivity(intent);
 						}
 						else{

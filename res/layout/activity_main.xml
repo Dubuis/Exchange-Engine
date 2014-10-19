@@ -48,7 +48,12 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:selectAllOnFocus="true" >
+
+        <requestFocus />
+
+    </EditText>
 
     <EditText
         android:id="@+id/motdepasse"
@@ -59,8 +64,6 @@
         android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="textPassword" >
-
-        <requestFocus />
     </EditText>
 
     <Button
