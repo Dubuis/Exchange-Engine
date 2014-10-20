@@ -123,8 +123,8 @@ public class ObjectInfo {
 	public String toString() {
 		// A modifier ultérieurement
 		return "XmlModel ["+ "\ntitre="
-				+ titre +"\nmel=" + mel + "\ntitre="
-				+ titre + "\ncategorie=" + categorie + "\ncouleur=" + couleur
+				+ titre +"\nproprietaire=" + proprietaire + "\nmel="
+				+ mel + "\ncategorie=" + categorie + "\ncouleur=" + couleur
 				+ "\nechange=" + echange + "\nzone=" + zone + "\nnumero="
 				+ numero + "\nurl=" + url + "\n]";
 	}

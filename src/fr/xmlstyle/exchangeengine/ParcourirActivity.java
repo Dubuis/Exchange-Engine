@@ -12,11 +12,9 @@ import org.xml.sax.XMLReader;
 import android.app.Activity;
 import android.content.res.AssetManager;
 import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.ViewGroup.LayoutParams;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -30,7 +28,7 @@ public class ParcourirActivity extends Activity{
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu){
-		//getMenuInflater().inflate(R.menu.parcourir, menu);
+		//getMenuInflater().inflate(R.menu.menu_parcourir, menu);
 		return true;
 	}
 	

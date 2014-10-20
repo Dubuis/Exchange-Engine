@@ -1118,13 +1118,14 @@ containing a value of this type.
         public static final int list_item=0x7f050029;
         public static final int mailUser=0x7f05004f;
         public static final int mdpUser=0x7f05004b;
+        public static final int mesobjets_layout=0x7f050052;
         public static final int middle=0x7f050012;
         public static final int motdepasse=0x7f050041;
         public static final int never=0x7f050009;
         public static final int nomUser=0x7f050046;
         public static final int none=0x7f050010;
         public static final int normal=0x7f050000;
-        public static final int parcourir_layout=0x7f050052;
+        public static final int parcourir_layout=0x7f050053;
         public static final int phraseAccueil=0x7f05003c;
         public static final int prenomUser=0x7f050049;
         public static final int progress_circular=0x7f050018;

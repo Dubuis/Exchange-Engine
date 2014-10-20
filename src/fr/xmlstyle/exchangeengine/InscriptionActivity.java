@@ -11,7 +11,7 @@ public class InscriptionActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.inscription);
-		// BOUTON POUR RETOURNER A LA PAGE PRINCIPALE SI ON A DEJA UN COMPTE !
+		/** BOUTON POUR RETOURNER A LA PAGE PRINCIPALE SI ON A DEJA UN COMPTE ! **/
 		final Button bouton1 = (Button) findViewById(R.id.buttonretour);
 		bouton1.setOnClickListener(new OnClickListener() {
 			

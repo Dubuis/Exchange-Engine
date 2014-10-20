@@ -278,13 +278,14 @@ int id listMode 0x7f050001
 int id list_item 0x7f050029
 int id mailUser 0x7f05004f
 int id mdpUser 0x7f05004b
+int id mesobjets_layout 0x7f050052
 int id middle 0x7f050012
 int id motdepasse 0x7f050041
 int id never 0x7f050009
 int id nomUser 0x7f050046
 int id none 0x7f050010
 int id normal 0x7f050000
-int id parcourir_layout 0x7f050052
+int id parcourir_layout 0x7f050053
 int id phraseAccueil 0x7f05003c
 int id prenomUser 0x7f050049
 int id progress_circular 0x7f050018

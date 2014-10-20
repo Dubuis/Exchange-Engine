@@ -32,6 +32,20 @@ public class AccueilActivity extends Activity {
 				startActivity(intent);
 			}
 	    });
+        //Bouton 2
+        final Button bouton2 = (Button) findViewById(R.id.boutonmesobjets);
+        bouton2.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(AccueilActivity.this, MesObjetsActivity.class);
+				intent.putExtra(EXTRA_MAIL, currentUser.getmel());
+				intent.putExtra(EXTRA_NOM, currentUser.getnom());
+				intent.putExtra(EXTRA_PRENOM, currentUser.getprenom());
+				intent.putExtra(EXTRA_PASSWORD, currentUser.getmdp());
+				startActivity(intent);
+			}
+	    });
         // Récupération de l'utilisateur courant
         Intent intent = getIntent();
         if(intent != null){
