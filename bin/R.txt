@@ -252,10 +252,10 @@ int id always 0x7f05000b
 int id beginning 0x7f050011
 int id boutonmesobjets 0x7f05003d
 int id boutonrecherche 0x7f05003e
-int id button1 0x7f050050
 int id buttonconnexion 0x7f050040
 int id buttoninscription 0x7f050045
 int id buttonretour 0x7f050051
+int id buttonsinscrire 0x7f050050
 int id checkbox 0x7f05002d
 int id collapseActionView 0x7f05000d
 int id default_activity_button 0x7f050028

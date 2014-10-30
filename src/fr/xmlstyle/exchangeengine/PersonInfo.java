@@ -1,6 +1,9 @@
 package fr.xmlstyle.exchangeengine;
 
-public class PersonInfo {
+import java.io.Serializable;
+
+
+public class PersonInfo implements Serializable {
 	private String mel;
 	private String prenom;
 	private String nom;

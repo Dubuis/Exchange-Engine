@@ -1092,10 +1092,10 @@ containing a value of this type.
         public static final int beginning=0x7f050011;
         public static final int boutonmesobjets=0x7f05003d;
         public static final int boutonrecherche=0x7f05003e;
-        public static final int button1=0x7f050050;
         public static final int buttonconnexion=0x7f050040;
         public static final int buttoninscription=0x7f050045;
         public static final int buttonretour=0x7f050051;
+        public static final int buttonsinscrire=0x7f050050;
         public static final int checkbox=0x7f05002d;
         public static final int collapseActionView=0x7f05000d;
         public static final int default_activity_button=0x7f050028;

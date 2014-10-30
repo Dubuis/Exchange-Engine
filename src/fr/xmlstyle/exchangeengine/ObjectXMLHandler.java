@@ -6,6 +6,12 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
+import android.app.Activity;
+import android.app.Application;
+import android.content.ContextWrapper;
+import android.view.View;
+import android.widget.Toast;
+
 public class ObjectXMLHandler extends DefaultHandler{
 	boolean currentElement = false;
 	String currentValue = "";
