@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 public class InscriptionActivity extends Activity {
 	private ArrayList<PersonInfo> userList;
+	@SuppressWarnings("unchecked")
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.inscription);

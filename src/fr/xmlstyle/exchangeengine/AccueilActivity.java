@@ -15,12 +15,13 @@ public class AccueilActivity extends Activity {
 	final String EXTRA_PASSWORD = "user_password";
 	final String EXTRA_NOM = "user_name";
 	final String EXTRA_PRENOM = "user_prenom";
-	final PersonInfo currentUser = new PersonInfo();
+	PersonInfo currentUser;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.accueil);
+        //Bouton 1
         final Button bouton1 = (Button) findViewById(R.id.boutonrecherche);
         bouton1.setOnClickListener(new OnClickListener() {
 			
@@ -46,14 +47,22 @@ public class AccueilActivity extends Activity {
 				startActivity(intent);
 			}
 	    });
+        //Bouton 3
+        final Button bouton3 = (Button) findViewById(R.id.boutonajouter);
+        bouton3.setOnClickListener(new OnClickListener() {
+        	@Override
+        	public void onClick(View v) {
+				Intent intent = new Intent(AccueilActivity.this, AjouterObjetsActivity.class);
+				Bundle extra = new Bundle();
+				extra.putSerializable("User", currentUser);
+				intent.putExtra("extra", extra);
+				startActivity(intent);
+			}
+        });
+        
         // Récupération de l'utilisateur courant
-        Intent intent = getIntent();
-        if(intent != null){
-	        currentUser.setnom(intent.getStringExtra(EXTRA_NOM));
-	    	currentUser.setprenom(intent.getStringExtra(EXTRA_PRENOM));
-	    	currentUser.setmdp(intent.getStringExtra(EXTRA_PASSWORD));
-	    	currentUser.setmel(intent.getStringExtra(EXTRA_MAIL));
-        }
+		Bundle extra = getIntent().getBundleExtra("extra");
+		if(extra != null) currentUser = (PersonInfo) extra.getSerializable("Person");
     	// Affichage de la phrase de bonjour personnalisée 
         TextView phraseAccueil = (TextView) findViewById(R.id.phraseAccueil);
         if (currentUser != null){

@@ -6,8 +6,14 @@
     <string name="Bouton_Inscription">S\'inscrire</string>
     <string name="Bouton_Photo">Prendre une photo</string>
     <string name="nouvel_objet_titre">Titre :</string>
-    <string name="nouvel_objet_categorie">Catégories :</string>
+    <string name="nouvel_objet_mail">Mail :</string>
+    <string name="nouvel_objet_categorie">Catégorie :</string>
     <string name="nouvel_objet_description">Description :</string>
+    <string name="nouvel_objet_couleur">Couleur :</string>
+    <string name="nouvel_objet_telephone">Téléphone :</string>
+    <string name="nouvel_objet_zone">Région :</string>
+    <string name="nouvel_objet_url">Url image :</string>
+    <string name="nouvel_objet_bouton_envoyer">Envoyer</string>
     <string name="accueil_bouton_mes_objets">Mes Objets</string>
     <string name="accueil_bouton_ajouter_objet">Ajouter Objet</string>
     <string name="accueil_bouton_recherche">Recherche</string>

@@ -28,6 +28,7 @@
 		<activity android:name="ParcourirActivity"></activity>
 		<activity android:name="InscriptionActivity"></activity>
 		<activity android:name="MesObjetsActivity"></activity>
+		<activity android:name="AjouterObjetsActivity"></activity>
 	</application>
 
 </manifest>

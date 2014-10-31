@@ -1,16 +1,8 @@
 package fr.xmlstyle.exchangeengine;
 
-import java.io.InputStream;
 import java.util.ArrayList;
 
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
-
-import org.xml.sax.InputSource;
-import org.xml.sax.XMLReader;
-
 import android.app.Activity;
-import android.content.res.AssetManager;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
@@ -33,19 +25,8 @@ public class ParcourirActivity extends Activity{
 	}
 	
 	public void parseXML(){
-		AssetManager assetManager = getBaseContext().getAssets();
-		try {
-			InputStream is = assetManager.open("Objets.xml");
-			SAXParserFactory spf = SAXParserFactory.newInstance();
-			SAXParser sp = spf.newSAXParser();
-			XMLReader xr = sp.getXMLReader();
-			
-			ObjectXMLHandler myXMLHandler = new ObjectXMLHandler();
-			xr.setContentHandler(myXMLHandler);
-			InputSource inStream = new InputSource(is);
-			xr.parse(inStream);
-			
-			ArrayList<ObjectInfo> objectList = myXMLHandler.getObjectList();
+		try {			
+			ArrayList<ObjectInfo> objectList = ObjectXMLHandler.lecture();
 			
 			//Toast.makeText(this, objectList.toString(), Toast.LENGTH_LONG).show();
 			

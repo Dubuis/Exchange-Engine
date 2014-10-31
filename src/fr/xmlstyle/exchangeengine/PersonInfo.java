@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 
 public class PersonInfo implements Serializable {
+	private static final long serialVersionUID = -5037004815070274329L;
 	private String mel;
 	private String prenom;
 	private String nom;

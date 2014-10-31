@@ -1,68 +1,178 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
-
-    <TextView
-        android:id="@+id/phraseAccueil"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:text="@string/nouvel_objet_titre" />
-
-    <EditText
-        android:id="@+id/nomUser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/phraseAccueil"
-        android:ems="10" >
-
-        <requestFocus />
-    </EditText>
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/nomUser"
-        android:text="@string/nouvel_objet_categorie" />
-
-    <Spinner
-        android:id="@+id/spinner1"
-        style="@array/Categories_objet"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/nomUser"
-        android:layout_toRightOf="@+id/textView2" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/spinner1"
-        android:text="@string/nouvel_objet_description" />
-
-    <EditText
-        android:id="@+id/prenomUser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/spinner1"
-        android:layout_toRightOf="@+id/textView3"
-        android:ems="10"
-        android:height="200dp"
-        android:inputType="textMultiLine" />
-
-    <ImageButton
-        android:id="@+id/imageButton1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/prenomUser"
-        android:contentDescription="@string/Bouton_Photo"
-        android:src="@drawable/app_photo" />
-    
-</RelativeLayout>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+	<RelativeLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:orientation="vertical" >
+	
+	    <EditText
+	        android:id="@+id/AjoutObjet_Titre"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentRight="true"
+	        android:layout_alignParentTop="true"
+	        android:ems="10"
+	        android:inputType="text" >
+	
+	        <requestFocus />
+	    </EditText>
+	
+	    <EditText
+	        android:id="@+id/AjoutObjet_Mail"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignLeft="@+id/AjoutObjet_Titre"
+	        android:layout_alignParentRight="true"
+	        android:layout_below="@+id/AjoutObjet_Titre"
+	        android:ems="10"
+	        android:inputType="textEmailAddress" />
+	
+	    <TextView
+	        android:id="@+id/textView2"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignBaseline="@+id/AjoutObjet_Mail"
+	        android:layout_alignBottom="@+id/AjoutObjet_Mail"
+	        android:layout_alignParentLeft="true"
+	        android:labelFor="@id/AjoutObjet_Mail"
+	        android:text="@string/nouvel_objet_mail" />
+	
+	    <TextView
+	        android:id="@+id/textView1"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignBaseline="@+id/AjoutObjet_Titre"
+	        android:layout_alignBottom="@+id/AjoutObjet_Titre"
+	        android:layout_alignParentLeft="true"
+	        android:labelFor="@id/AjoutObjet_Titre"
+	        android:text="@string/nouvel_objet_titre" />
+	
+	    <Spinner
+	        android:id="@+id/AjoutObjet_Categorie"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignLeft="@+id/AjoutObjet_Mail"
+	        android:layout_below="@+id/AjoutObjet_Mail"
+	        android:entries="@array/Categories_objet"
+	        android:prompt="@array/Categories_objet" />
+	
+	    <TextView
+	        android:id="@+id/textView3"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignTop="@+id/AjoutObjet_Categorie"
+	        android:layout_marginTop="18dp"
+	        android:labelFor="@id/AjoutObjet_Categorie"
+	        android:text="@string/nouvel_objet_categorie" />
+	
+	    <EditText
+	        android:id="@+id/AjoutObjet_Description"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentRight="true"
+	        android:layout_below="@+id/AjoutObjet_Categorie"
+	        android:ems="10"
+	        android:height="200dp"
+	        android:gravity="top"
+	        android:inputType="textMultiLine" />
+	
+	    <TextView
+	        android:id="@+id/textView4"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignTop="@+id/AjoutObjet_Description"
+	        android:layout_marginTop="10dp"
+	        android:labelFor="@id/AjoutObjet_Description"
+	        android:text="@string/nouvel_objet_description" />
+	
+	    <EditText
+	        android:id="@+id/AjoutObjet_Couleur"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentRight="true"
+	        android:layout_below="@+id/AjoutObjet_Description"
+	        android:ems="10"
+	        android:inputType="text" />
+	
+	    <TextView
+	        android:id="@+id/textView5"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignBaseline="@+id/AjoutObjet_Couleur"
+	        android:layout_alignBottom="@+id/AjoutObjet_Couleur"
+	        android:layout_alignParentLeft="true"
+	        android:labelFor="@id/AjoutObjet_Couleur"
+	        android:text="@string/nouvel_objet_couleur" />
+	
+	    <EditText
+	        android:id="@+id/AjoutObjet_Tel"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignLeft="@+id/AjoutObjet_Couleur"
+	        android:layout_below="@+id/AjoutObjet_Couleur"
+	        android:ems="10"
+	        android:inputType="phone" />
+	
+	    <TextView
+	        android:id="@+id/textView6"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignBaseline="@+id/AjoutObjet_Tel"
+	        android:layout_alignBottom="@+id/AjoutObjet_Tel"
+	        android:layout_alignParentLeft="true"
+	        android:labelFor="@id/AjoutObjet_Tel"
+	        android:text="@string/nouvel_objet_telephone" />
+	    	
+	    <EditText
+	        android:id="@+id/AjoutObjet_Zone"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignLeft="@+id/AjoutObjet_Tel"
+	        android:layout_below="@+id/AjoutObjet_Tel"
+	        android:ems="10"
+	        android:inputType="text" />
+	    	
+	    <TextView
+	        android:id="@+id/textView7"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignBaseline="@+id/AjoutObjet_Zone"
+	        android:layout_alignBottom="@+id/AjoutObjet_Zone"
+	        android:layout_alignParentLeft="true"
+	        android:labelFor="@id/AjoutObjet_Zone"
+	        android:text="@string/nouvel_objet_zone" />
+	    
+	    <EditText
+	        android:id="@+id/AjoutObjet_Url"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignLeft="@+id/AjoutObjet_Zone"
+	        android:layout_below="@+id/AjoutObjet_Zone"
+	        android:ems="10"
+	        android:inputType="text" />
+	    
+	    <TextView
+	        android:id="@+id/textView8"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignBaseline="@+id/AjoutObjet_Url"
+	        android:layout_alignBottom="@+id/AjoutObjet_Url"
+	        android:layout_alignParentLeft="true"
+	        android:labelFor="@id/AjoutObjet_Url"
+	        android:text="@string/nouvel_objet_url" />
+	        
+		<Button
+		    android:id="@+id/boutonenvoyer"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_below="@+id/AjoutObjet_Url"
+		    android:layout_centerHorizontal="true"
+		    android:layout_marginTop="10dp"
+		    android:text="@string/nouvel_objet_bouton_envoyer" />
+	
+	</RelativeLayout>
+</ScrollView>
