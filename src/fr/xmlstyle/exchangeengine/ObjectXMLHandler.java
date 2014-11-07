@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.input.SAXBuilder;
 import org.jdom2.output.Format;
@@ -23,12 +24,16 @@ public class ObjectXMLHandler{
 		SAXBuilder sxb = new SAXBuilder();
 		File fichier = Environment.getExternalStorageDirectory();
 		fichier = new File(fichier+"/Objets.xml");
+		if(!fichier.exists()){
+			creerDocument();
+		}
 		try{
 			document = sxb.build(fichier);
 		}
 		catch(Exception e){}
 		racine = document.getRootElement();
 	}
+	
 	public static ArrayList<ObjectInfo> lecture(){
 		ouverture();
 		ArrayList<ObjectInfo> listObjets = new ArrayList<ObjectInfo>();
@@ -56,6 +61,14 @@ public class ObjectXMLHandler{
 		}
 		return listObjets;
 	}
+	
+	public static boolean creerDocument(){
+		Element base = new Element("diagramme");
+		document = new Document(base);
+		enregistrer();
+		return true;
+	}
+	
 	public static boolean ajouter(ObjectInfo newObject){
 		ouverture();
 		List<Element> list = racine.getChildren("objet");
@@ -107,6 +120,37 @@ public class ObjectXMLHandler{
 		enregistrer();
 		return true;
 	}
+	
+	public static boolean supprimer(int indice){
+		ouverture();
+		List<Element> list = racine.getChildren("objet");
+		Iterator<Element> i = list.iterator();
+		int k = 0;
+		while(i.hasNext()){
+			Element courant = i.next();
+			List<Element> listO = courant.getChildren("information");
+			Iterator<Element> j = listO.iterator();
+			while(j.hasNext()){
+				Element courantO = j.next();
+				if(k==indice){
+					courantO.setName("S");
+					courant.removeChild("S");
+					enregistrer();
+					return true;
+				}
+				k++;
+			}
+		}
+		
+		return false;
+	}
+	
+	public static boolean modifier(int indice, ObjectInfo object){
+		if(supprimer(indice))
+			ajouter(object);
+		return false;
+	}
+	
 	private static void enregistrer(){
 		File fichier = Environment.getExternalStorageDirectory();
 		fichier = new File(fichier+"/Objets.xml");

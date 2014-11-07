@@ -3,8 +3,8 @@
 	<utilisateur>
 		<mel>toto@toto.fr</mel>
 		<information>
-			<prenom>toto@toto.fr</prenom>
-			<nom>toto</nom>
+			<prenom>Monsieur</prenom>
+			<nom>Toto</nom>
 			<mdp>toto</mdp>
 		</information>
 	</utilisateur>
@@ -17,11 +17,11 @@
 		</information>
 	</utilisateur>
 	<utilisateur>
-		<mel>pute@gmail.com</mel>
+		<mel>ma@gmail.com</mel>
 		<information>
-			<prenom>pute</prenom>
-			<nom>pute</nom>
-			<mdp>pute</mdp>
+			<prenom>Marie</prenom>
+			<nom>Antoinette</nom>
+			<mdp>0000</mdp>
 		</information>
 	</utilisateur>
 </diagramme>

@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -16,22 +18,19 @@ public class MesObjetsActivity extends Activity{
 	final String EXTRA_PASSWORD = "user_password";
 	final String EXTRA_NOM = "user_name";
 	final String EXTRA_PRENOM = "user_prenom";
-	final PersonInfo currentUser = new PersonInfo();
+	PersonInfo currentUser;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.mes_objets);
 		/** Récupération de l'utilisateur courant **/
-        Intent intent = getIntent();
-        if(intent != null){
-	        currentUser.setnom(intent.getStringExtra(EXTRA_NOM));
-	    	currentUser.setprenom(intent.getStringExtra(EXTRA_PRENOM));
-	    	currentUser.setmdp(intent.getStringExtra(EXTRA_PASSWORD));
-	    	currentUser.setmel(intent.getStringExtra(EXTRA_MAIL));
-	    /** Parse et affiche **/
-		parseXML();
-        }
+		Bundle extra = getIntent().getBundleExtra("extra");
+		if(extra != null){
+			currentUser = (PersonInfo) extra.getSerializable("User"); 
+			/** Parse et affiche **/
+			afficheur();
+		}
 	}
 	
 	@Override
@@ -40,7 +39,7 @@ public class MesObjetsActivity extends Activity{
 		return true;
 	}
 	
-	public void parseXML(){
+	public void afficheur(){
 		try {			
 			ArrayList<ObjectInfo> objectList = ObjectXMLHandler.lecture();
 			
@@ -51,7 +50,9 @@ public class MesObjetsActivity extends Activity{
 			TextView tv;
 			//ImageView img;
 			 /** Boucle sur tous les objets du fichier **/
-			for(ObjectInfo objectinfo: objectList){
+			for(int i=0;i<objectList.size();i++){
+				final int j = i;
+				ObjectInfo objectinfo = objectList.get(i);
 				 /** filtre ceux qui appartiennent à l'utilisateur courant **/
 				if( (objectinfo.getproprietaire().toString()).equals(currentUser.getmel())){
 					layoutContent = new LinearLayout(this);
@@ -60,6 +61,18 @@ public class MesObjetsActivity extends Activity{
 					par.setMargins(15, 15, 15, 15);
 					layoutContent.setLayoutParams(par);
 					layoutContent.setBackgroundColor(Color.LTGRAY);
+					layoutContent.setOnClickListener(new OnClickListener(){
+
+						@Override
+						public void onClick(View v) {
+							Intent intent = new Intent(MesObjetsActivity.this, ObjetActivity.class);
+							Bundle extra = new Bundle();
+							extra.putInt("indice", j);
+							extra.putSerializable("person", currentUser);
+							intent.putExtra("extra", extra);
+							startActivity(intent);
+						}
+					});
 					
 					tv = new TextView(this);
 					tv.setText("Titre : "+objectinfo.gettitre());

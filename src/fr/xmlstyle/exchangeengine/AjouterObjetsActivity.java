@@ -54,6 +54,9 @@ public class AjouterObjetsActivity extends Activity{
 					newObject.setzone(zone.getText().toString());
 					ObjectXMLHandler.ajouter(newObject);
 					Intent intent = new Intent(AjouterObjetsActivity.this, AccueilActivity.class);
+					Bundle passa = new Bundle();
+					passa.putSerializable("Person", currentUser);
+					intent.putExtra("extra", passa);
 					startActivity(intent);
 				}
 			}

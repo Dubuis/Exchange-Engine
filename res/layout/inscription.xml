@@ -8,13 +8,13 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:labelFor="@+id/nomUser"
         android:text="@string/inscription_nom" />
 
     <EditText
         android:id="@+id/nomUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:capitalize="none"
         android:ems="10"
         android:inputType="textPersonName" >
 
@@ -25,13 +25,13 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:labelFor="@+id/prenomUser"
         android:text="@string/inscription_prnom" />
 
     <EditText
         android:id="@+id/prenomUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:capitalize="characters"
         android:ems="10"
         android:inputType="textPersonName" />
 
@@ -39,6 +39,7 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:labelFor="@+id/mdpUser"
         android:text="@string/main_motdepasse" />
 
     <EditText
@@ -52,6 +53,7 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:labelFor="@+id/verifMdp"
         android:text="@string/inscription_motdepasse" />
 
     <EditText
@@ -65,6 +67,7 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:labelFor="@+id/mailUser"
         android:text="@string/inscription_adresse" />
 
     <EditText

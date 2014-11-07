@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <array name="Categories_objet">
+    <array name="Objet_Categorie">
         <item>Appliances</item>
 		<item>Baby</item>
 		<item>Beauty</item>
@@ -22,7 +22,7 @@
 		<item>Sports</item>
 		<item>Tools</item>
 		<item>Toys</item>
-		<item>Vehicles</item>
+		<item>Vehicules</item>
 		<item>Video</item>
 		<item>VideoGames</item>
 		<item>OtherServices</item>
@@ -30,5 +30,40 @@
 		<item>Teaching</item>
 		<item>Transport</item>
     </array>
-    
+	<array name="Categories_objet">
+		<item>Autres Produits</item>
+		<item>Accessoires vestimentaires</item>
+        <item>Appareils</item>
+		<item>Bébé</item>
+		<item>Beauté</item>
+		<item>Bijoux</item>
+		<item>Bureau</item>
+		<item>Chaussures</item>
+		<item>Industriel</item>
+		<item>Instruments De Musique</item>
+		<item>Jeux Video</item>
+		<item>Jouets</item>
+		<item>Livres</item>
+		<item>Maison</item>
+		<item>Musique</item>
+		<item>Nourriture et boissons</item>
+		<item>Ordinateurs</item>
+		<item>Outils</item>
+		<item>Photographie</item>
+		<item>Santé</item>
+		<item>Sports</item>
+		<item>Vehicules</item>
+		<item>Vêtements</item>
+		<item>Video</item>
+		<item>Autres Services</item>
+		<item>Enseignement</item>
+		<item>Transport</item>
+		<item>Soins personnels</item>
+    </array>
+    <array name="Genre">
+		<item>Madame</item>
+		<item>Mademoiselle</item>
+		<item>Monsieur</item>
+	</array>
+	
 </resources>

@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.input.SAXBuilder;
 import org.jdom2.output.Format;
@@ -16,7 +17,7 @@ import org.jdom2.output.XMLOutputter;
 import android.os.Environment;
 
 public class PersonXMLHandler{
-	static org.jdom2.Document document;
+	static Document document;
 	static Element racine;
 	static String etat;
 	public static void ouverture(){
@@ -24,6 +25,9 @@ public class PersonXMLHandler{
 		SAXBuilder sxb = new SAXBuilder();
 		File fichier = Environment.getExternalStorageDirectory();
 		fichier = new File(fichier+"/Clients.xml");
+		if(!fichier.exists()){
+			creerDocument();
+		}
 		try{
 			document = sxb.build(fichier);
 		}
@@ -48,6 +52,13 @@ public class PersonXMLHandler{
 			listPerson.add(personC);
 		}
 		return listPerson;
+	}
+	
+	public static boolean creerDocument(){
+		Element base = new Element("diagramme");
+		document = new Document(base);
+		enregistrer();
+		return true;
 	}
 	
 	public static boolean ajouter(PersonInfo newUser){

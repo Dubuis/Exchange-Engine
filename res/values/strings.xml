@@ -17,6 +17,7 @@
     <string name="accueil_bouton_mes_objets">Mes Objets</string>
     <string name="accueil_bouton_ajouter_objet">Ajouter Objet</string>
     <string name="accueil_bouton_recherche">Recherche</string>
+    <string name="accueil_bouton_contrat">Générer un contrat</string>
     <string name="main_identifiant">Identifiant :</string>
     <string name="main_motdepasse">Mot de passe :</string>
     <string name="inscription_nom">Nom :</string>

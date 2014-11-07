@@ -42,4 +42,12 @@
         android:layout_centerHorizontal="true"
         android:text="@string/accueil_bouton_ajouter_objet" />
 
+    <Button
+        android:id="@+id/boutoncontrat"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/boutonajouter"
+        android:layout_centerHorizontal="true"
+        android:text="@string/accueil_bouton_contrat" />
+
 </RelativeLayout>

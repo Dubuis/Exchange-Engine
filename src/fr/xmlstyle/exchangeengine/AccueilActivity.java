@@ -27,8 +27,6 @@ public class AccueilActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				
-				
 				Intent intent = new Intent(AccueilActivity.this, ParcourirActivity.class);
 				startActivity(intent);
 			}
@@ -40,10 +38,9 @@ public class AccueilActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent(AccueilActivity.this, MesObjetsActivity.class);
-				intent.putExtra(EXTRA_MAIL, currentUser.getmel());
-				intent.putExtra(EXTRA_NOM, currentUser.getnom());
-				intent.putExtra(EXTRA_PRENOM, currentUser.getprenom());
-				intent.putExtra(EXTRA_PASSWORD, currentUser.getmdp());
+				Bundle extra = new Bundle();
+				extra.putSerializable("User", currentUser);
+				intent.putExtra("extra", extra);
 				startActivity(intent);
 			}
 	    });
@@ -59,11 +56,24 @@ public class AccueilActivity extends Activity {
 				startActivity(intent);
 			}
         });
+
+        //Bouton 4
+        final Button bouton4 = (Button) findViewById(R.id.boutoncontrat);
+        bouton4.setOnClickListener(new OnClickListener() {
+        	@Override
+        	public void onClick(View v) {
+				Intent intent = new Intent(AccueilActivity.this, ContratActivity.class);
+				Bundle extra = new Bundle();
+				extra.putSerializable("User", currentUser);
+				intent.putExtra("extra", extra);
+				startActivity(intent);
+			}
+        });
         
-        // Récupération de l'utilisateur courant
+        /** Récupération de l'utilisateur courant **/
 		Bundle extra = getIntent().getBundleExtra("extra");
 		if(extra != null) currentUser = (PersonInfo) extra.getSerializable("Person");
-    	// Affichage de la phrase de bonjour personnalisée 
+    	/** Affichage de la phrase de bonjour personnalisée **/ 
         TextView phraseAccueil = (TextView) findViewById(R.id.phraseAccueil);
         if (currentUser != null){
         	phraseAccueil.setText("Bonjour "+currentUser.getnom()+" "+currentUser.getprenom());
