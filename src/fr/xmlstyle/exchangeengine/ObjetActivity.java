@@ -7,11 +7,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -71,7 +68,7 @@ public class ObjetActivity extends Activity {
 					newObject.seturl(url.getText().toString());
 					newObject.setzone(zone.getText().toString());
 					ObjectXMLHandler.modifier(indice, newObject);
-					Intent intent = new Intent(ObjetActivity.this, AccueilActivity.class);
+					Intent intent = new Intent(ObjetActivity.this, MesObjetsActivity.class);
 					Bundle passa = new Bundle();
 					passa.putSerializable("Person", currentUser);
 					intent.putExtra("extra", passa);
@@ -80,7 +77,7 @@ public class ObjetActivity extends Activity {
 			}
 		});
 		// Ajout d'un bouton Supprimer
-		Button bouton2 = new Button(this);
+		/*Button bouton2 = new Button(this);
 		bouton2.setText("Supprimer");
 		RelativeLayout.LayoutParams para = new RelativeLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
 		para.setLayoutDirection(LinearLayout.VERTICAL);
@@ -98,7 +95,7 @@ public class ObjetActivity extends Activity {
 			}
 		});
 		RelativeLayout parent = (RelativeLayout)findViewById(R.id.AjoutObjet_Layout);
-		parent.addView(bouton2);
+		parent.addView(bouton2);*/
 	}
 	
 	private int trouverPosition(String cat){

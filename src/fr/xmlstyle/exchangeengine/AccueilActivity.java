@@ -39,7 +39,7 @@ public class AccueilActivity extends Activity {
 			public void onClick(View v) {
 				Intent intent = new Intent(AccueilActivity.this, MesObjetsActivity.class);
 				Bundle extra = new Bundle();
-				extra.putSerializable("User", currentUser);
+				extra.putSerializable("Person", currentUser);
 				intent.putExtra("extra", extra);
 				startActivity(intent);
 			}

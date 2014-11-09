@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -27,7 +28,7 @@ public class MesObjetsActivity extends Activity{
 		/** Récupération de l'utilisateur courant **/
 		Bundle extra = getIntent().getBundleExtra("extra");
 		if(extra != null){
-			currentUser = (PersonInfo) extra.getSerializable("User"); 
+			currentUser = (PersonInfo) extra.getSerializable("Person"); 
 			/** Parse et affiche **/
 			afficheur();
 		}
@@ -48,6 +49,7 @@ public class MesObjetsActivity extends Activity{
 			LinearLayout layoutParent = (LinearLayout)findViewById(R.id.mesobjets_layout);
 			LinearLayout layoutContent;
 			TextView tv;
+			Button b;
 			//ImageView img;
 			 /** Boucle sur tous les objets du fichier **/
 			for(int i=0;i<objectList.size();i++){
@@ -61,19 +63,6 @@ public class MesObjetsActivity extends Activity{
 					par.setMargins(15, 15, 15, 15);
 					layoutContent.setLayoutParams(par);
 					layoutContent.setBackgroundColor(Color.LTGRAY);
-					layoutContent.setOnClickListener(new OnClickListener(){
-
-						@Override
-						public void onClick(View v) {
-							Intent intent = new Intent(MesObjetsActivity.this, ObjetActivity.class);
-							Bundle extra = new Bundle();
-							extra.putInt("indice", j);
-							extra.putSerializable("person", currentUser);
-							intent.putExtra("extra", extra);
-							startActivity(intent);
-						}
-					});
-					
 					tv = new TextView(this);
 					tv.setText("Titre : "+objectinfo.gettitre());
 					tv.setBackgroundColor(Color.RED);
@@ -103,6 +92,40 @@ public class MesObjetsActivity extends Activity{
 					tv = new TextView(this);
 					tv.setText("\tTel : "+objectinfo.getnumero());
 					layoutContent.addView(tv);
+					
+					// Bouton modifier
+					b = new Button(this);
+					b.setText("Modifier");
+					b.setOnClickListener(new OnClickListener(){
+
+						@Override
+						public void onClick(View v) {
+							Intent intent = new Intent(MesObjetsActivity.this, ObjetActivity.class);
+							Bundle extra = new Bundle();
+							extra.putInt("indice", j);
+							extra.putSerializable("person", currentUser);
+							intent.putExtra("extra", extra);
+							startActivity(intent);
+						}
+					});
+					layoutContent.addView(b);
+					
+					// Bouton supprimer
+					b = new Button(this);
+					b.setText("Supprimer");
+					b.setOnClickListener(new OnClickListener() {
+						@Override
+						public void onClick(View v) {
+							ObjectXMLHandler.supprimer(j);
+							Intent intent = new Intent(MesObjetsActivity.this, MesObjetsActivity.class);
+							Bundle passa = new Bundle();
+							passa.putSerializable("Person", currentUser);
+							intent.putExtra("extra", passa);
+							startActivity(intent);
+						}
+					});
+					layoutContent.addView(b);
+					
 					layoutParent.addView(layoutContent);
 				}
 			}

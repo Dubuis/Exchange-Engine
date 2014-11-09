@@ -27,7 +27,7 @@ public class ContratActivity extends Activity{
 	/**
 	 * Rep[0] -> Permier Utilisateur
 	 * Rep[1] -> Adresse du Permier Utilisateur
-	 * Rep[2] -> Deuxième Ustilisateur
+	 * Rep[2] -> Deuxième Utilisateur
 	 * Rep[3] -> Adresse du Deuxième Utilisateur
 	 * Rep[4] -> Objet du Premier Utilisateur
 	 * Rep[5] -> Objet du Deuxième Utilisateur
@@ -56,7 +56,7 @@ public class ContratActivity extends Activity{
 		
 		/** CONSTRUCTION DE LA PAGE **/
 		parent = (LinearLayout)findViewById(R.id.question_layout);
-		consigne.setText("Indiquez les Nom et Prénom de la permière personne ?");
+		consigne.setText("Indiquez les Nom et Prénom de la permière personne.");
 		parent.addView(consigne);
 		reponse.setText(currentUser.getnom() +" "+ currentUser.getprenom());
 		parent.addView(reponse);
@@ -91,7 +91,7 @@ public class ContratActivity extends Activity{
 				case 1:
 					rep[nbloop] = reponse.getText().toString(); // -> Adresse 1
 					/** Préparation pour Nom 2 **/
-					consigne.setText("Indiquez les Nom et Prénom de la deuxième personne ?");
+					consigne.setText("Indiquez les Nom et Prénom de la deuxième personne.");
 					choix.setEnabled(true);
 					choix.setVisibility(Spinner.VISIBLE);
 					String array_spinner[] = new String[userList.size()];
@@ -147,7 +147,7 @@ public class ContratActivity extends Activity{
 					String array_spinner2[] = new String[3];
 					array_spinner2[0] = "Pas de Soulte";
 					array_spinner2[1] = rep[0];
-					array_spinner2[2] = rep[1];
+					array_spinner2[2] = rep[2];
 					ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(ContratActivity.this, android.R.layout.simple_spinner_item, array_spinner2);
 					choix.setAdapter(adapter2);
 					choix.setOnItemSelectedListener(new OnItemSelectedListener() {
@@ -184,7 +184,7 @@ public class ContratActivity extends Activity{
 						Toast.makeText(ContratActivity.this, "Fichier : "+fichier+".pdf", Toast.LENGTH_LONG).show();
 						/* On tente d'afficher le PDF.
 						 * S'il n'existe pas d'activité permettant de l'afficher,
-						 * on retroune à l'accueil. */
+						 * on retourne à l'accueil. */
 						Uri path = Uri.fromFile(CreatorPDF.getFile()); 
 						Intent intent = new Intent(Intent.ACTION_VIEW); intent.setDataAndType(path, "application/pdf"); intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); 
 						try { 
