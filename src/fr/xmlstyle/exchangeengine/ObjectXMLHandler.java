@@ -1,3 +1,9 @@
+/** Cette fonction a pour but de traiter le fichier XML
+ * objets.xml. On trouvera ici les fonctions d'ouverture,
+ * fermetuer du fichier. La gestion du parser pour l'ajout,
+ * la modification et la suppression des objets dans le
+ * fichier sus-nommé.
+ * **/
 package fr.xmlstyle.exchangeengine;
 
 import java.io.File;
@@ -23,6 +29,9 @@ public class ObjectXMLHandler{
 	public static void ouverture(){
 		SAXBuilder sxb = new SAXBuilder();
 		File fichier = Environment.getExternalStorageDirectory();
+		// A AJOUTER : VERIFICATION DE L'EXISTANCE D'UN STOCKAGE EXTERNE. EN CAS D'ABSENCE DE
+		// STOCKAGE EXTERNE, PREVOIR UN ENREGISTREMENT DANS LA MEMOIRE INTERNE OU UNE
+		// FERMETURE DU PROGRAMME.
 		fichier = new File(fichier+"/Objets.xml");
 		if(!fichier.exists()){
 			creerDocument();
@@ -35,8 +44,12 @@ public class ObjectXMLHandler{
 	}
 	
 	public static ArrayList<ObjectInfo> lecture(){
+		// On commence par ouvrir le fichier
 		ouverture();
+		// Puis on commence à extraire les informations
 		ArrayList<ObjectInfo> listObjets = new ArrayList<ObjectInfo>();
+		// la racine est la première balise (ici <diagramme></diagrammme>).
+		// racine contient donc tous les objets
 		List<Element> list = racine.getChildren("objet");
 		Iterator<Element> i = list.iterator();
 		while(i.hasNext()){
@@ -63,6 +76,7 @@ public class ObjectXMLHandler{
 	}
 	
 	public static boolean creerDocument(){
+		// Création d'un fichier objets.xml vide (en cas d'absence du fichier)
 		Element base = new Element("diagramme");
 		document = new Document(base);
 		enregistrer();
@@ -70,6 +84,7 @@ public class ObjectXMLHandler{
 	}
 	
 	public static boolean ajouter(ObjectInfo newObject){
+		// Ajout d'un objet dans le fichier
 		ouverture();
 		List<Element> list = racine.getChildren("objet");
 		Iterator<Element> i = list.iterator();
@@ -122,6 +137,7 @@ public class ObjectXMLHandler{
 	}
 	
 	public static boolean supprimer(int indice){
+		// Suppression d'un objet dans le fichier xml à la position indice
 		ouverture();
 		List<Element> list = racine.getChildren("objet");
 		Iterator<Element> i = list.iterator();
@@ -146,6 +162,8 @@ public class ObjectXMLHandler{
 	}
 	
 	public static boolean modifier(int indice, ObjectInfo object){
+		// La modification d'un objet est en fait une suppression de l'ancien objet
+		// et un ajout de l'objet une fois modifié
 		if(supprimer(indice))
 			ajouter(object);
 		return false;

@@ -80,7 +80,8 @@ public class CreatorPDF{
 			e.printStackTrace();
 		}
 	}
-/** LES DIFFRENTS ARTICLES A AJOUTER DANS LE CONTRAT SOUS REGROUPER ICI PAR SOUCIS DE MODULARITE **/
+/** LES DIFFRENTS ARTICLES A AJOUTER DANS LE CONTRAT SONT REGROUPES ICI PAR SOUCIS DE MODULARITE **/
+	/* Penser à utiliser des noms compréhensibles */
 	private static void addIntroLegale(Paragraph page, String[] contenu){
 		page.add(new Paragraph("Objet : Contrat d'échange"));
 		addEmptyLine(page, 5);

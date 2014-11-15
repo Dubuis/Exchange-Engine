@@ -17,24 +17,23 @@ public class AccueilActivity extends Activity {
 	final String EXTRA_PRENOM = "user_prenom";
 	PersonInfo currentUser;
 	
+	/** Création de la page **/
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.accueil);
-        //Bouton 1
+        //Bouton "Recherche"
         final Button bouton1 = (Button) findViewById(R.id.boutonrecherche);
         bouton1.setOnClickListener(new OnClickListener() {
-			
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent(AccueilActivity.this, ParcourirActivity.class);
 				startActivity(intent);
 			}
 	    });
-        //Bouton 2
+        //Bouton "Mes Objets"
         final Button bouton2 = (Button) findViewById(R.id.boutonmesobjets);
         bouton2.setOnClickListener(new OnClickListener() {
-			
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent(AccueilActivity.this, MesObjetsActivity.class);
@@ -44,7 +43,7 @@ public class AccueilActivity extends Activity {
 				startActivity(intent);
 			}
 	    });
-        //Bouton 3
+        //Bouton "Ajouter un Objet"
         final Button bouton3 = (Button) findViewById(R.id.boutonajouter);
         bouton3.setOnClickListener(new OnClickListener() {
         	@Override
@@ -57,7 +56,7 @@ public class AccueilActivity extends Activity {
 			}
         });
 
-        //Bouton 4
+        //Bouton "Contrat"
         final Button bouton4 = (Button) findViewById(R.id.boutoncontrat);
         bouton4.setOnClickListener(new OnClickListener() {
         	@Override

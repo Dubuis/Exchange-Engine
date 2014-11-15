@@ -76,6 +76,7 @@ public class ObjetActivity extends Activity {
 				}
 			}
 		});
+		// Le bouton "supprimer" a été déplacé dans l'activité "Mes Objets"
 		// Ajout d'un bouton Supprimer
 		/*Button bouton2 = new Button(this);
 		bouton2.setText("Supprimer");

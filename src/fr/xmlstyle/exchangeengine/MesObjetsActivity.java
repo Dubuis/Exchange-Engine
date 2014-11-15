@@ -36,16 +36,15 @@ public class MesObjetsActivity extends Activity{
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu){
+		// Fonction servant à rajouter un menu à une page. (Inutilisée pour le moment)
 		//getMenuInflater().inflate(R.menu.menu_mesobjets, menu);
 		return true;
 	}
 	
 	public void afficheur(){
-		try {			
+		try {
+			// Récupération des objets existants
 			ArrayList<ObjectInfo> objectList = ObjectXMLHandler.lecture();
-			
-		
-			
 			LinearLayout layoutParent = (LinearLayout)findViewById(R.id.mesobjets_layout);
 			LinearLayout layoutContent;
 			TextView tv;
@@ -80,6 +79,7 @@ public class MesObjetsActivity extends Activity{
 					tv = new TextView(this);
 					tv.setText("\tLieu : "+objectinfo.getzone());
 					layoutContent.addView(tv);
+					// GESTION DES IMAGES PAS ENCORE PRIS EN CHARGE !!!
 					//img = new ImageView(this);
 					//img.setImageURI(Uri.parse(objectinfo.geturl()));
 					//layoutContent.addView(img);

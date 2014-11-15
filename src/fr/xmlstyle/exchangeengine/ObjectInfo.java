@@ -2,7 +2,7 @@ package fr.xmlstyle.exchangeengine;
 
 public class ObjectInfo {
 	
-	/* objets.xml de la forme :
+	/* CONTENU FICHIER objets.xml DE LA FORME :
 	 * 
 	 * <diagramme>
 	 * 	<objet>

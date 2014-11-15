@@ -178,6 +178,7 @@ public class ContratActivity extends Activity{
 						nbloop++;
 					}
 				case 7 :
+					valider.setEnabled(false); // Désactivation du bouton (pour éviter les bugs)
 					rep[nbloop] = reponse.getText().toString(); // -> SoultePrix
 					String fichier = currentUser.getnom()+Math.random();
 					if(CreatorPDF.CreationContrat(fichier, rep)){
@@ -193,9 +194,11 @@ public class ContratActivity extends Activity{
 						catch (ActivityNotFoundException e) { 
 							Toast.makeText(ContratActivity.this, "Aucune Application Disponible pour Afficher un PDF", Toast.LENGTH_SHORT).show();
 							intent = new Intent(ContratActivity.this, AccueilActivity.class);
+							// Transmission de l'utilisateur courant
 							Bundle passa = new Bundle();
 							passa.putSerializable("Person", currentUser);
 							intent.putExtra("extra", passa);
+							// Lancement de l'activité suivante
 							startActivity(intent);
 						}
 					}

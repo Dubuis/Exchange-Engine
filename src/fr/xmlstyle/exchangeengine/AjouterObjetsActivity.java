@@ -11,18 +11,20 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 public class AjouterObjetsActivity extends Activity{
-	private PersonInfo currentUser;
+	private PersonInfo currentUser; // Utilisateur actuellement connecté
+	/** Création de la page **/
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
         setContentView(R.layout.ajouter_objet);
-		Bundle extra = getIntent().getBundleExtra("extra");
+		// Récupération de l'utilisateur courant lors de la création de l'activité
+        Bundle extra = getIntent().getBundleExtra("extra");
 		if(extra != null){
 			currentUser = (PersonInfo) extra.getSerializable("User");
 			EditText edit = (EditText)findViewById(R.id.AjoutObjet_Mail);
 			edit.setText(currentUser.getmel().toString());
 		}
-        //Bouton
+        //Bouton "Envoyer"
         final Button bouton1 = (Button) findViewById(R.id.boutonenvoyer);
         bouton1.setOnClickListener(new OnClickListener() {
 			@Override
@@ -53,10 +55,12 @@ public class AjouterObjetsActivity extends Activity{
 					newObject.seturl(url.getText().toString());
 					newObject.setzone(zone.getText().toString());
 					ObjectXMLHandler.ajouter(newObject);
+					// Transmission à l'activité suivante de l'utilisateur courant
 					Intent intent = new Intent(AjouterObjetsActivity.this, AccueilActivity.class);
 					Bundle passa = new Bundle();
 					passa.putSerializable("Person", currentUser);
 					intent.putExtra("extra", passa);
+					// Lancement de l'activité suivante
 					startActivity(intent);
 				}
 			}
